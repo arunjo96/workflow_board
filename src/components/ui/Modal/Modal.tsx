@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import styles from './Modal.module.css'
+import { MdOutlineClose } from "react-icons/md";
+
 
 interface ModalProps {
   isOpen: boolean
@@ -58,7 +60,7 @@ interface ModalProps {
             onClick={onClose}
             aria-label="Close modal"
           >
-            ×
+            <MdOutlineClose />
           </button>
         </div>
         <div className={styles.body}>{children}</div>

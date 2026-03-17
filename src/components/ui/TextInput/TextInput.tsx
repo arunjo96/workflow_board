@@ -4,7 +4,8 @@ import styles from './TextInput.module.css'
 interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     label?: string
     error?: string
-    helperText?: string
+  helperText?: string
+  
 }
 
 export const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(({

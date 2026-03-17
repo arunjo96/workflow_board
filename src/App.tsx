@@ -1,10 +1,14 @@
 
+import React from 'react'
+import { ToastContainer } from './components/ui'
+import AppContent from './routes/AppContent'
 import './styles/global.css'
 
-function App() {
+const App: React.FC = () => {
   return (
     <>
-      <h2 style={{ color: 'white' }}>Arunjo</h2>
+     <AppContent />
+      <ToastContainer />
     </>
   )
 }

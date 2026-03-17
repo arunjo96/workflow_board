@@ -1,7 +1,8 @@
 import {useEffect} from 'react'
 import styles from './Toast.module.css'
 import { useAppDispatch, useAppSelector } from '../../../store'
-import { FiCheckCircle, FiXCircle, FiAlertTriangle, FiInfo, FiX } from "react-icons/fi"
+import { FiCheckCircle, FiXCircle, FiAlertTriangle, FiInfo } from "react-icons/fi"
+import { MdOutlineClose } from "react-icons/md";
 import { removeToast } from '../../../store/toastSlice'
 
 const ICONS = {
@@ -49,7 +50,7 @@ const ToastItem: React.FC<ToastItemProps> = ({ message, type, onDismiss }) => {
       <span className={styles.message}>{message}</span>
 
       <button className={styles.dismiss} onClick={onDismiss} aria-label="Dismiss">
-        <FiX />
+        <MdOutlineClose />
       </button>
     </div>
   )
