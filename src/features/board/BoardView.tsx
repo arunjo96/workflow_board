@@ -39,8 +39,6 @@ export const BoardView: React.FC = () => {
   const storageError = useAppSelector((s) => s.tasks.storageError)
   const filters = useAppSelector((s) => s.filters)
 
-
-
   
   const [modalOpen, setModalOpen] = useState(false)
   const [editingTask, setEditingTask] = useState<Task | undefined>()
