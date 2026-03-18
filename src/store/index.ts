@@ -11,6 +11,7 @@ export const store = configureStore({
     filters: filtersReducer,
     toast: toastReducer,
   },
+  
 })
 
 export type RootState = ReturnType<typeof store.getState>

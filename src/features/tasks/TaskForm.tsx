@@ -120,7 +120,7 @@ export const TaskForm: React.FC<TaskFormProps> = ({ task, onSubmit, onCancel }) 
         <Button type="button" variant="ghost" onClick={handleCancel}>
           Cancel
         </Button>
-        <Button type="submit" variant="primary">
+        <Button type="submit" variant="primary" aria-label="submit-task">
           {task ? 'Update Task' : 'Create Task'}
         </Button>
       </div>
