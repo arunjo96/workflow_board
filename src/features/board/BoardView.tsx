@@ -18,11 +18,15 @@ import { useAppDispatch, useAppSelector } from '../../store'
 import { addTask, updateTask, deleteTask, moveTask, hydrateTasks } from '../../store/tasksSlice'
 import { addToast } from '../../store/toastSlice'
 import { useStorage } from '../../hooks/useStorage'
+import { useTheme } from '../../context/ThemeContext'
 import { sortTasks, getPriorityColor } from '../../utils/taskUtils'
 import type { Task, Status, TaskFormData } from '../../types'
 import { FaSearch } from "react-icons/fa";
 import { FaPlus, FaRegFileLines } from "react-icons/fa6";
 import { BiError } from "react-icons/bi";
+import { MdLightMode } from "react-icons/md";
+import { BsFillMoonStarsFill } from "react-icons/bs";
+import { FiFlag } from 'react-icons/fi'
 import styles from './BoardView.module.css'
 
 const STATUSES: Status[] = ['Backlog', 'In Progress', 'Done']
@@ -41,6 +45,8 @@ export const BoardView: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false)
   const [editingTask, setEditingTask] = useState<Task | undefined>()
   const [activeTask, setActiveTask] = useState<Task | null>(null)
+
+  const { theme, toggleTheme} = useTheme()
 
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 6 } }),
@@ -152,14 +158,21 @@ export const BoardView: React.FC = () => {
           <h1 className={styles.title}>Team Task Board</h1>
           <p className={styles.subtitle}>{tasks.length} task{tasks.length !== 1 ? 's' : ''} total</p>
         </div>
-        <Button variant="primary" size="md" onClick={openCreate}><FaPlus/> New Task</Button>
+
+      <div  className={styles.headerBtn}>
+          <Button onClick={toggleTheme} variant="secondary" >
+            {theme === 'dark' ?  <MdLightMode size={18} /> :  <BsFillMoonStarsFill size={18} />}
+          </Button>
+          
+         <Button variant="primary" size="md" onClick={openCreate}><FaPlus/> New Task</Button>
+        </div>
       </header>
 
       {storageError && <div className={styles.errorBanner} role="alert"><BiError/> {storageError}</div>}
 
       <FilterBar />
 
-      {allEmpty ? (
+       {allEmpty ? (
         <div className={styles.emptyState}>
           <div className={styles.emptyIcon}> <FaRegFileLines /> </div>
           <h2>No tasks yet</h2>
@@ -198,7 +211,7 @@ export const BoardView: React.FC = () => {
               <Card className={styles.overlayCard}>
                 <div className={styles.overlayInner}>
                   <span style={{ color: getPriorityColor(activeTask.priority), fontSize: 11, fontWeight: 600 }}>
-                    ● {activeTask.priority}
+                    <FiFlag /> {activeTask.priority}
                   </span>
                   <p style={{ margin: '4px 0 0', fontSize: 13, fontWeight: 500 }}>{activeTask.title}</p>
                   {activeTask.tags.length > 0 && (

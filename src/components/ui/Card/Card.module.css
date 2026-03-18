@@ -6,6 +6,11 @@
     transition: border-color 0.15s, box-shadow 0.15s;
 }
 
+.card:hover {
+    background: var(--color-surface-2);
+    box-shadow: var(--shadow-md);
+}
+
 .hoverable {
     cursor: pointer;
 }

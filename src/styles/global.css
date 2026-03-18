@@ -22,6 +22,37 @@
 
 }
 
+[data-theme="light"] {
+    --color-bg: #f8fafc;
+    /* pure white illa → soft bg */
+    --color-surface: #ffffff;
+    /* cards */
+    --color-surface-2: #f1f5f9;
+    /* subtle sections */
+    --color-surface-3: #e2e8f0;
+    /* hover layers */
+
+    --color-border: #e5e7eb;
+    /* light subtle border */
+
+    --color-text: #0f172a;
+    /* strong readable text */
+    --color-text-muted: #475569;
+    /* secondary text */
+    --color-text-dim: #94a3b8;
+    /* placeholders */
+
+    --color-accent: #f59e0b;
+    /* keep brand consistency */
+    --color-accent-hover: #d97706;
+    --color-accent-dim: rgba(245, 158, 11, 0.15);
+
+    --color-success: #059669;
+    --color-error: #dc2626;
+    --color-warning: #f59e0b;
+
+}
+
 
 *, *::before, *::after{
     box-sizing: border-box;

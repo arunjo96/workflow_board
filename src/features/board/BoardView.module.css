@@ -12,6 +12,12 @@
     margin-bottom: 4px;
 }
 
+.headerBtn{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 .title {
     margin: 0;
     font-size: 24px;
@@ -78,4 +84,11 @@
 
 .overlayInner {
     padding: 10px 14px;
+}
+
+@media (max-width:420px) {
+    .header{
+        flex-direction: column;
+        row-gap: 12px;
+    }
 }
