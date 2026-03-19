@@ -153,7 +153,7 @@ export const BoardView: React.FC = () => {
     <div className={styles.page}>
       <header className={styles.header}>
         <div>
-          <h1 className={styles.title}>Team Task Board</h1>
+          <h1 className={styles.title}>Workflow Board</h1>
           <p className={styles.subtitle}>{tasks.length} task{tasks.length !== 1 ? 's' : ''} total</p>
         </div>
 
