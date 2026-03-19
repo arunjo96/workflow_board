@@ -16,7 +16,7 @@ interface BoardColumnProps {
     onMove: (id: string, status: Status) => void
 }
 
-const BoardColumn: React.FC<BoardColumnProps> = (
+export const BoardColumn: React.FC<BoardColumnProps> = (
     { status, tasks, onEdit, onDelete, onMove}) =>  {
     const { setNodeRef, isOver } = useDroppable({ id: status })
      const color = getStatusColor(status)
@@ -43,4 +43,4 @@ const BoardColumn: React.FC<BoardColumnProps> = (
   )
 }
 
-export default BoardColumn
+

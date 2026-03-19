@@ -10,7 +10,7 @@ import {
 } from '@dnd-kit/core'
 import type { DragEndEvent, DragOverEvent, DragStartEvent } from '@dnd-kit/core'
 import { arrayMove } from '@dnd-kit/sortable'
-import  BoardColumn  from './BoardColumn'
+import  {BoardColumn}  from './BoardColumn'
 import { FilterBar } from '../filters/FilterBar'
 import { TaskForm } from '../tasks/TaskForm'
 import { Modal, Button, Card, Tag } from '../../components/ui'

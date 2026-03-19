@@ -11,7 +11,7 @@ describe('BoardView - Filter Behavior', () => {
 
 
     await user.click(screen.getByRole('button', { name: /new task/i }))
-    let modal = await screen.findByRole('dialog')
+    await screen.findByRole('dialog')
 
     await user.type(screen.getByLabelText(/title/i), 'React Task')
     await user.type(screen.getByLabelText(/description/i), 'Learn React')
@@ -20,7 +20,7 @@ describe('BoardView - Filter Behavior', () => {
 
  
     await user.click(screen.getByRole('button', { name: /new task/i }))
-    modal = await screen.findByRole('dialog')
+    await screen.findByRole('dialog')
 
     await user.type(screen.getByLabelText(/title/i), 'Angular Task')
     await user.type(screen.getByLabelText(/description/i), 'Learn Angular')
